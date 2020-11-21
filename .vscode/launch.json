@@ -5,21 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (web)",
+            "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/aspnetapp.dll",
+            "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/aoc.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
             "stopAtEntry": false,
-            "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            },
-            "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
-            }
+            "console": "internalConsole",
         }
     ]
 }
