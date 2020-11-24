@@ -11,7 +11,6 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -328,3 +327,4 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+.ionide/symbolCache.db
