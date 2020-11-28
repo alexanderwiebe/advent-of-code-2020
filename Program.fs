@@ -6,7 +6,7 @@ open System.IO
 let asdf = "wut up"
 
 [<EntryPoint>]
-let main argv =
+let main argv =  
   let parseFile = File.ReadAllLines("numbers.txt")
   let parseList = 
     parseFile 

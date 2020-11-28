@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\services\services.fsproj" />
+    <ProjectReference Include="..\aoc.fsproj" />
   </ItemGroup>
 
 </Project>
