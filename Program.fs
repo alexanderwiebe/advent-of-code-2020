@@ -1,23 +1,14 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
+﻿open System
 open System.IO
-
-let asdf = "wut up"
+open services
 
 [<EntryPoint>]
-let main argv =  
-  let parseFile = File.ReadAllLines("numbers.txt")
-  let parseList = 
-    parseFile 
-      |> Array.map(fun n -> n.Split(" ") ) 
-      |> Array.reduce Array.append
-  parseList |> Array.iter( fun n -> printfn "%s" n)
-  // let numbers = parseFile |> List.map( fun n -> printfn "%c" n)
-  let intList = parseList |> Array.map int
+let main argv =
+  printfn "Welcom to advent of code day 1"
+  let parseFile = File.ReadAllLines("day01.data")
+  
+  let total = Day1.findDoubles parseFile
 
-  let total = intList |> Array.sum
   printfn "total: %i" total
-  printfn "Hello World from F#!"
-  let fdsa = asdf + " asdf"
+  System.Console.ReadKey()
   0 // return an integer exit code

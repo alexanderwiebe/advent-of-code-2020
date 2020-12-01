@@ -6,6 +6,6 @@ open services
 
 [<Fact>]
 let ``should convert strings to ints`` () =
-    let expected = 100
-    let actual = Day1.findDoubles [|"2"; "4"; "6"; "8"; "10"; "10"|]
+    let expected = 514579
+    let actual = Day1.findDoubles [|"1721"; "979"; "366"; "299"; "675"; "1456"|]
     Assert.Equal(expected, actual)
