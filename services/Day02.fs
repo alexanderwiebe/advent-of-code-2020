@@ -2,7 +2,7 @@
 
 open System
 
-module Day1 =
+module Day2 =
     let findDoubles list =
         list 
         |> Seq.collect (fun item -> list |> Seq.map(fun newItem -> (newItem, item)))
