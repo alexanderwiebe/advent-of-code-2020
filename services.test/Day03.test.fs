@@ -1,55 +1,39 @@
 module Day03.test
 
 open System
+open System.IO
 open Xunit
 open services
 
 [<Fact>]
-let ``should parse a password`` () =
-    let expected = ["1-3"; "a:"; "abcde";]
-    let actual = Day02.parsePassword "1-3 a: abcde"
+let ``should reduce string list to char list`` () =
+    let input = File.ReadAllLines("day03sample.data")
+    let actual = input |> Seq.mapi (fun i row -> row.Substring((i*3 % row.Length) , 1))
+    let expected = [|".";".";"#";".";"#";"#";".";"#";"#";"#";"#"|]
     Assert.Equal(expected, actual)
 
 [<Fact>]
-let ``should convert initial parts to regex`` () =
-    let expected = "a{1,3}"
-    let actual = Day02.createRegex [|"1-3"; "a:"; "abcde";|]
+let ``should reduce then convert`` () =
+    let input = File.ReadAllLines("day03sample.data")
+    let actual = input |> Seq.mapi (fun i row -> match row.Substring((i*3 % row.Length) , 1) with
+                                                    | "." -> 0
+                                                    | "#" -> 1)
+    let expected = [|0;0;1;0;1;1;0;1;1;1;1|]
     Assert.Equal(expected, actual)
     
 [<Fact>]
-let ``should return 1 if match`` () =
-    let expected = 1
-    let actual = Day02.checkRegex "abcde" "a{1,3}"
+let ``should do above and sum`` () =
+    let input = File.ReadAllLines("day03sample.data")
+    let actual = input |> Seq.mapi (fun i row -> match row.Substring((i*3 % row.Length) , 1) with
+                                                    | "." -> 0
+                                                    | "#" -> 1)
+                       |> Seq.sum
+    let expected = 7
     Assert.Equal(expected, actual)
     
 [<Fact>]
-let ``should return 0 if not a match`` () =
-    let expected = 0
-    let actual = Day02.checkRegex "cdefg" "b{1,3}"
+let ``should work the same with the day03 function``  () =
+    let input = File.ReadAllLines("day03sample.data")
+    let actual = Day03.runSled input
+    let expected = 7
     Assert.Equal(expected, actual)
-    
-[<Fact>]
-let ``should run across a list of possibilities`` () =
-    let expected = 1
-    let input = [|
-        "1-3 a: abcde"
-        "1-3 b: cdefg"
-        "2-9 c: ccccccccc"
-    |]
-    let actual = Day02.runner input
-    Assert.Equal(expected, actual)
-
-[<Fact>]
-let ``sample from real data`` () =
-    let expected = 5
-    let input = [|
-        "2-6 c: fcpwjqhcgtffzlbj" // ✅ 
-        "6-9 x: xxxtwlxxx" // ✅
-        "5-6 w: wwwwlwwwh" //  ✅
-        "7-10 q: nfbrgwqlvljgq" // 
-        "2-3 g: gjggg" // ✅
-    |]
-    let actual = Day02.runner input
-    Assert.Equal(expected, actual)
-
-

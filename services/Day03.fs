@@ -4,34 +4,11 @@ open System
 open System.Text.RegularExpressions
 
 module Day03 =
-    let parsePassword (passwordConfig:string) : string [] = passwordConfig.Split(" ")
-    
-    
-    let createRegex (passwordParsed: string[]) :string =
-        match passwordParsed with
-        | [| quantity; seek; _; |] ->
-            let regexes = quantity.Split("-")
-            $"{seek.Substring(0,1)}{{{regexes.[0]},{regexes.[1]}}}"
-            
-    let createMinMax (passwordParsed: string[]) :(int * int) =
-        match passwordParsed with
-        | [| quantity; seek; _; |] ->
-            let regexes = quantity.Split("-")
-            (Int32.Parse regexes.[0], Int32.Parse regexes.[1])
-            
-    let checkRegex text regex =
-        if Regex.IsMatch(text, regex) then 1
-        else 0
-    
-    let checkRange (text:string) (minMax:int * int) =
-        if text.Length >= fst minMax && text.Length <= snd minMax then 1
-        else 0
-        
-    let checkPositions (text:string) (seek:string) (minMax:int * int) =
-        if ((text.[fst minMax - 1] = char seek) <> (text.[snd minMax - 1] = char seek)) then 1
-        else 0
-      
-    let runner passwordList =
-        passwordList |> Seq.map parsePassword
-        |> Seq.map (fun passParts -> passParts |> createMinMax |> checkPositions (passParts.[2]) (passParts.[1].Substring(0,1)))
+    let runSled input =
+        input
+        |>  Seq.mapi (fun i (row:string) ->
+                match row.Substring((i*3 % row.Length) , 1) with
+                | "." -> 0
+                | "#" -> 1
+                | _ -> 0)
         |> Seq.sum

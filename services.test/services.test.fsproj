@@ -12,6 +12,9 @@
     <Compile Include="Day02.test.fs" />
     <Compile Include="Day03.test.fs" />
     <Compile Include="Program.fs" />
+    <None Include="day03sample.data">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

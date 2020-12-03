@@ -4,10 +4,10 @@ open services
 
 [<EntryPoint>]
 let main argv =
-  printfn "Welcome to advent of code day 2"
-  let parseFile = File.ReadAllLines("day02.data")
+  printfn "Welcome to advent of code day 3"
+  let parseFile = File.ReadAllLines("day03.data")
   
-  let total = Day02.runner parseFile
+  let total = Day03.runSled parseFile
 
   printfn "total: %i" total
   Console.ReadKey() |> ignore
