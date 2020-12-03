@@ -26,9 +26,12 @@ module Day02 =
     let checkRange (text:string) (minMax:int * int) =
         if text.Length >= fst minMax && text.Length <= snd minMax then 1
         else 0
+        
+    let checkPositions (text:string) (seek:string) (minMax:int * int) =
+        if ((text.[fst minMax - 1] = char seek) <> (text.[snd minMax - 1] = char seek)) then 1
+        else 0
       
     let runner passwordList =
         passwordList |> Seq.map parsePassword
-        |> Seq.map (fun passParts -> passParts |> createMinMax |> checkRange (Regex.Replace(passParts.[2], $"[^{passParts.[1].Substring(0,1)}]", ""))) 
-// |> checkRegex (Regex.Replace(passParts.[2], $"[^{passParts.[1].Substring(0,1)}]", "")))
+        |> Seq.map (fun passParts -> passParts |> createMinMax |> checkPositions (passParts.[2]) (passParts.[1].Substring(0,1)))
         |> Seq.sum

@@ -30,7 +30,7 @@ let ``should return 0 if not a match`` () =
     
 [<Fact>]
 let ``should run across a list of possibilities`` () =
-    let expected = 2
+    let expected = 1
     let input = [|
         "1-3 a: abcde"
         "1-3 b: cdefg"
@@ -41,13 +41,13 @@ let ``should run across a list of possibilities`` () =
 
 [<Fact>]
 let ``sample from real data`` () =
-    let expected = 2
+    let expected = 5
     let input = [|
-        "2-6 c: fcpwjqhcgtffzlbj"
-        "6-9 x: xxxtwlxxx"
-        "5-6 w: wwwwlwwwh"
-        "7-10 q: nfbrgwqlvljgq"
-        "2-3 g: gjggg"
+        "2-6 c: fcpwjqhcgtffzlbj" // ✅ 
+        "6-9 x: xxxtwlxxx" // ✅
+        "5-6 w: wwwwlwwwh" //  ✅
+        "7-10 q: nfbrgwqlvljgq" // 
+        "2-3 g: gjggg" // ✅
     |]
     let actual = Day02.runner input
     Assert.Equal(expected, actual)
