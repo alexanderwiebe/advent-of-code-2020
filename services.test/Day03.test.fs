@@ -34,6 +34,22 @@ let ``should do above and sum`` () =
 [<Fact>]
 let ``should work the same with the day03 function``  () =
     let input = File.ReadAllLines("day03sample.data")
-    let actual = Day03.runSled input
+    let actual = Day03.runSled input 3 1
     let expected = 7
     Assert.Equal(expected, actual)
+    
+[<Fact>]
+let ``right 1 down 2``  () =
+    let input = File.ReadAllLines("day03sample.data")
+    let actual = Day03.runSled input 1 2
+    let expected = 2
+    Assert.Equal(expected, actual)
+    
+[<Fact>]
+let ``part 2 mega test``  () =
+    Assert.Equal(2, Day03.runSled (File.ReadAllLines("day03sample.data")) 1 1)
+    Assert.Equal(7, Day03.runSled (File.ReadAllLines("day03sample.data")) 3 1)
+    Assert.Equal(3, Day03.runSled (File.ReadAllLines("day03sample.data")) 5 1)
+    Assert.Equal(4, Day03.runSled (File.ReadAllLines("day03sample.data")) 7 1)
+    // Assert.Equal(2, Day03.runSled (File.ReadAllLines("day03sample.data")) 1 2)
+    
