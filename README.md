@@ -5,8 +5,8 @@
 | 1   | [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day01part1) | [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day01part2) |
 | 2   | [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day02part1) | [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day02part2) |
 | 3   | [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day03part1) | [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day03part2) |
-| 4   |                                                                            |                                                                            |
-| 5   |                                                                            |                                                                            |
+| 4   [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day04part1) | [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day04part2) |
+| 5   [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day05part1) | [✔](https://github.com/alexanderwiebe/advent-of-code-2020/tree/day05part2) |
 | 6   |                                                                            |                                                                            |
 | 7   |                                                                            |                                                                            |
 | 8   |                                                                            |                                                                            |
