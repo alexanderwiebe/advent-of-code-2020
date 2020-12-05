@@ -30,6 +30,11 @@
     <None Include="day04sample.data">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="day04_regex_guide.md" />
+    <Content Include="day04regexed.data">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="day04sampleregexed.data" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

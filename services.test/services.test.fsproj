@@ -11,10 +11,17 @@
     <Compile Include="Day01.test.fs" />
     <Compile Include="Day02.test.fs" />
     <Compile Include="Day03.test.fs" />
+    <Compile Include="Day04.test.fs" />
     <Compile Include="Program.fs" />
     <None Include="day03sample.data">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="day04p2sampleregexed.data">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="day04sampleregexed.data">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
