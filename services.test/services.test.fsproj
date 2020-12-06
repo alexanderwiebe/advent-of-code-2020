@@ -13,6 +13,7 @@
     <Compile Include="Day03.test.fs" />
     <Compile Include="Day04.test.fs" />
     <Compile Include="Day05.test.fs" />
+    <Compile Include="Day06.test.fs" />
     <Compile Include="Program.fs" />
     <None Include="day03sample.data">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
